@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/Auth';
 
 // import { Container } from './styles';
 
 function HomePage() {
-    const { initializing } = useAuth();
+    const navigate = useNavigate();
+    const { initializing, token } = useAuth();
+
+    useEffect(() => {
+        if (!token) {
+            navigate('/sign-in')
+        }
+    }, [token, navigate])
+
 
     return (
         <div>ola mundo {initializing} </div>

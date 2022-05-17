@@ -1,15 +1,26 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as M from '@mui/material'
-import { createTheme } from '@mui/material/styles';
 import logo from '../../assets/logo.png'
-import * as S from './styles';
+import * as S from '../../assets/IconsStyles'
 import { BsPersonCircle } from 'react-icons/bs';
 import PasswordInput from '../../components/PasswordInput';
 import { signUp } from '../../services/api';
+import createThemes from '../../components/themes';
+import Copyright from '../../components/Copyright';
+import { useAuth } from '../../context/Auth';
 
 function SignUp() {
     const navigate = useNavigate();
+    const { token } = useAuth();
+
+    React.useEffect(() => {
+        if (token) {
+            navigate('/')
+        }
+    }, [token, navigate])
+
+
     const [values, setValues] = React.useState({
         username: '',
         email: '',
@@ -29,7 +40,6 @@ function SignUp() {
         }
     };
     function handlePromise() {
-        console.log("values: ", values)
         const promise = signUp({
             email: values.email,
             username: values.username,
@@ -45,7 +55,6 @@ function SignUp() {
 
         })
         promise.catch(error => {
-            console.log("mensagem>: ", error.response)
             if (error.response.status === 409) {
                 alert("Credenciais já cadastradas! Tente novamente")
             }
@@ -57,18 +66,18 @@ function SignUp() {
     }
 
     return (
-        <M.ThemeProvider theme={theme} >
+        <M.ThemeProvider theme={createThemes()} >
             <M.Container component="main" maxWidth="xs" height="xs" >
                 <M.CssBaseline />
                 <M.Box
                     sx={{
-                        marginTop: 2,
+                        marginTop: 4,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                     }}
                 >
-                    <S.Img src={logo} alt="logoimg" />
+                    <S.ImgLogo src={logo} alt="logoimg" />
                     <S.PersonLogo>
                         <BsPersonCircle />
                         <div>Cadastro</div>
@@ -95,7 +104,6 @@ function SignUp() {
                             label="Email"
                             name="email"
                             autoComplete="email"
-                            autoFocus
                         />
                         <PasswordInput values={values} setValues={setValues} />
                         <M.Button
@@ -112,7 +120,10 @@ function SignUp() {
                             alignItems: 'center'
                         }}>
 
-                            <M.Link href="#" variant="body2">
+                            <M.Link variant="body2"
+                                sx={{ cursor: "pointer" }}
+                                onClick={() => { navigate('/sign-in') }}
+                            >
                                 {"Já possui conta? Faça login"}
                             </M.Link>
                         </M.Box>
@@ -124,28 +135,5 @@ function SignUp() {
 
     );
 }
-function Copyright() {
-    return (
-        <M.Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 3, mb: 2 }}>
-            {'Copyright © '}
-            <M.Link color="inherit" href="https://github.com/venyustech">
-                Bookdem by VenyusTECH
-            </M.Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </M.Typography>
-    );
-}
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            light: '#f48fb1',
-            dark: '#7c4dff',
-            contrastText: '#fff',
-            main: '#f50057'
-        },
-    },
-});
 
 export default SignUp;

@@ -6,10 +6,13 @@ const GlobalStyles = createGlobalStyle`
    License: none (public domain)
 */
 :root{
-    --main-color: #000;
-    --botton-color: #FF4791;
+    --background-input-color: #f3f3f3;
+    --placeholder-color: #f50057;
+	--inputing-color: #000;
     --font-family: 'Roboto', sans-serif;
-    --font-color: #fff;
+	--border-color:#cfcfcf;
+    --background-color: #f1f1f1;
+	--button-color: #4F3C75;
 
 }
 

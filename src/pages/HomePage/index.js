@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import UserContext from '../../providers/Auth';
+import React from 'react';
+import { useAuth } from '../../context/Auth';
 
 // import { Container } from './styles';
 
 function HomePage() {
-    const { initializing } = useContext(UserContext);
+    const { initializing } = useAuth();
+
     return (
         <div>ola mundo {initializing} </div>
     );

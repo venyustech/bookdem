@@ -1,6 +1,10 @@
 import { createTheme } from '@mui/material';
+import styled from 'styled-components';
+import desktop from '../../assets/desktop.png'
+import ipad2 from '../../assets/iPad2.png'
+import iPhone from '../../assets/iPhone.png'
 
-function createThemes() {
+export default function createThemes() {
     const theme = createTheme({
         palette: {
             primary: {
@@ -14,4 +18,21 @@ function createThemes() {
     return theme;
 }
 
-export default createThemes;
+export const Container = styled.div`
+    min-height:100vh;
+    max-height:100vh;
+    background-image: url(${desktop}) ;
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position:center;
+
+    @media(max-width:1000px){
+        background-image: url(${ipad2});
+        align-items: center;
+    }
+     @media(max-width:450px){
+        background-image: url(${iPhone});
+    }
+
+`;

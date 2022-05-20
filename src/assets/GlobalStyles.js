@@ -10,9 +10,11 @@ const GlobalStyles = createGlobalStyle`
     --placeholder-color: #f50057;
 	--inputing-color: #000;
     --font-family: 'Roboto', sans-serif;
+	--font-Spotlight: 'Chango', cursive;
 	--border-color:#cfcfcf;
     --background-color: #f1f1f1;
 	--button-color: #4F3C75;
+	--font-color: #727272;
 
 }
 

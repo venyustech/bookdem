@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../../components/NavBar';
+import { Container } from '../../components/themes';
 import { useAuth } from '../../context/Auth';
-
-// import { Container } from './styles';
+import * as S from './styles';
 
 function HomePage() {
     const navigate = useNavigate();
-    const { initializing, token } = useAuth();
-
+    const { token } = useAuth();
     useEffect(() => {
         if (!token) {
             navigate('/sign-in')
@@ -16,7 +16,17 @@ function HomePage() {
 
 
     return (
-        <div>ola mundo {initializing} </div>
+        <Container>
+            <NavBar />
+            <S.JoinGroupWrapper>
+                <div>
+                    Um grupo de leitura para chamar de seu
+                    <S.ButtonJoin onClick={() => navigate('/groups')}>
+                        Participar
+                    </S.ButtonJoin>
+                </div>
+            </S.JoinGroupWrapper>
+        </Container>
     );
 }
 

@@ -80,10 +80,7 @@ const NavBar = () => {
                         }}
                     >
                         <LogoBookdem src={logo} alt="bookdem"></LogoBookdem>
-
-
                     </Typography>
-
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                         <IconButton
                             size="large"
@@ -122,6 +119,8 @@ const NavBar = () => {
                             ))}
                         </Menu>
                     </Box>
+
+
 
 
                     <Typography
@@ -199,6 +198,8 @@ const NavBar = () => {
                             ))}
                         </Menu>
                     </Box>
+
+
                 </Toolbar>
             </Container>
         </AppBar>

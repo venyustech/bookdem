@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 import styled from 'styled-components';
-import desktop from '../../assets/desktop.png'
+import desktop from '../../assets/desktopClean.png'
 import ipad2 from '../../assets/iPad2.png'
 import iPhone from '../../assets/iPhone.png'
 

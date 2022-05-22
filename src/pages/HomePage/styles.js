@@ -1,4 +1,26 @@
 import styled from 'styled-components';
+import desktop from '../../assets/desktop.png'
+import ipad2 from '../../assets/iPad2.png'
+import iPhone from '../../assets/iPhone.png'
+
+const Container = styled.div`
+    min-height:100vh;
+    max-height:100vh;
+    background-image: url(${desktop}) ;
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position:center;
+
+    @media(max-width:1000px){
+        background-image: url(${ipad2});
+        align-items: center;
+    }
+     @media(max-width:450px){
+        background-image: url(${iPhone});
+    }
+
+`;
 
 const JoinGroupWrapper = styled.div`
     font-family:var(--font-Spotlight);
@@ -54,4 +76,4 @@ const ButtonJoin = styled.button`
 
     }
 `
-export { JoinGroupWrapper, ButtonJoin }
+export { JoinGroupWrapper, ButtonJoin, Container }

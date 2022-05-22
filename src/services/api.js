@@ -16,11 +16,15 @@ async function getAllBooks(token) {
   const config = createConfig(token);
   return await axios.get(`${BASE_URL}/books`, config);
 }
+async function getAllGroups(token) {
+  const config = createConfig(token);
+  return await axios.get(`${BASE_URL}/groups`, config);
+}
 
 async function signIn(body) {
   return await axios.post(`${BASE_URL}/user/sign-in`, body);
 }
 export {
-  signIn, signUp, getAllBooks
+  signIn, signUp, getAllBooks, getAllGroups
 };
 

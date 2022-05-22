@@ -5,7 +5,7 @@ export const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #cecccc;
+  background-color:  rgba(255,0,86,1);
   width: ${(props) => (props.barOpened ? "30rem" : "1rem")};
   cursor: ${(props) => (props.barOpened ? "auto" : "pointer")};
   padding: 15px;

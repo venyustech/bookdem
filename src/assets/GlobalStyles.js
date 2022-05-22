@@ -8,15 +8,14 @@ const GlobalStyles = createGlobalStyle`
 :root{
     --background-input-color: #f3f3f3;
     --placeholder-color: #f50057;
-	--inputing-color: #000;
+	--inputing-color: #5b5b5b;
     --font-family: 'Roboto', sans-serif;
 	--font-Spotlight: 'Chango', cursive;
 	--border-color:#cfcfcf;
     --background-color: #f1f1f1;
 	--button-color: #4F3C75;
 	--font-color: #727272;
-	--list-components: #EAEDED;
-
+	--list-components: rgba(255,255,255,0.4);
 }
 
 

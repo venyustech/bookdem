@@ -7,10 +7,10 @@ function AllBooks({ allBooks, handleFavoritesClick }) {
     return (
         <S.Container>
             <S.ImgWrapper>
-                {allBooks.map((movie, index) =>
+                {allBooks.map((book, index) =>
                     <S.ImgBox key={index} >
-                        <S.Img src={movie.pictureUrl} alt="blabla"  ></S.Img>
-                        <S.Overlay onClick={() => handleFavoritesClick(movie)}>
+                        <S.Img src={book.pictureUrl} alt="blabla"  ></S.Img>
+                        <S.Overlay onClick={() => handleFavoritesClick(book)}>
                             <AddFavorites />
                         </S.Overlay>
                     </S.ImgBox>

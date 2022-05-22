@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
     --background-color: #f1f1f1;
 	--button-color: #4F3C75;
 	--font-color: #727272;
+	--list-components: #EAEDED;
 
 }
 

@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material';
 import styled from 'styled-components';
-import desktop from '../../assets/desktop.png'
+import desktop from '../../assets/desktopClean.png'
 import ipad2 from '../../assets/iPad2.png'
 import iPhone from '../../assets/iPhone.png'
 
@@ -20,13 +20,12 @@ export default function createThemes() {
 
 export const Container = styled.div`
     min-height:100vh;
-    max-height:100vh;
     background-image: url(${desktop}) ;
     background-attachment: fixed;
     background-size:cover;
     background-repeat:no-repeat ;
     background-position:center;
-
+    padding-bottom:30px ;
     @media(max-width:1000px){
         background-image: url(${ipad2});
         align-items: center;

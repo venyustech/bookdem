@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
-import { Container } from '../../components/themes';
 import { useAuth } from '../../context/Auth';
 import * as S from './styles';
 
@@ -16,7 +15,7 @@ function HomePage() {
 
 
     return (
-        <Container>
+        <S.Container>
             <NavBar />
             <S.JoinGroupWrapper>
                 <div>
@@ -26,7 +25,7 @@ function HomePage() {
                     </S.ButtonJoin>
                 </div>
             </S.JoinGroupWrapper>
-        </Container>
+        </S.Container>
     );
 }
 

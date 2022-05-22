@@ -6,10 +6,10 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
   background-color: #cecccc;
-  width: ${(props) => (props.barOpened ? "30rem" : "2rem")};
+  width: ${(props) => (props.barOpened ? "30rem" : "1rem")};
   cursor: ${(props) => (props.barOpened ? "auto" : "pointer")};
   padding: 15px;
-  height: 2rem;
+  height: 1rem;
   border-radius: 10rem;
   transition: width 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
   @media(max-width:690px){
@@ -47,7 +47,7 @@ export const Button = styled.button`
   outline: none;
   color: white;
   svg{
-      font-size: 30px;
+      font-size: 25px;
       margin-left: 3px;
   }
 `;

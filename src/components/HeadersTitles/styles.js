@@ -14,21 +14,19 @@ const HeaderWrapper = styled.div`
 
     @media(max-width: 770px){
         width: 95%;
-        justify-content: ${(props) => (props.barOpened ? "center" : "space-between")};
     }
     @media(min-width: 2500px){
-        h1{font-size: 5rem;}
+        font-size: 3rem;
         width: 70%;
     }
 `
 const HeaderTitle = styled.h1`
     font-weight: bolder;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: var(--font-family);
     color: var(--font-color);
     @media(max-width: 770px){
-        display: ${(props) => (props.barOpened ? "none" : "flex")};
-        font-size: 50px;
+        font-size: 30px;
         transition: width 300ms cubic-bezier(0.8, 0.8, 0.4, 1);
     }
 `

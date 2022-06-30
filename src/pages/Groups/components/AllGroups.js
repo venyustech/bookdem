@@ -1,7 +1,7 @@
 import React from 'react';
-import JoinGroupOverlay from '../../../../components/JoinGroupOverlay';
-import AddTitleOverlay from '../../../../components/AddTitleOverlay';
-import * as S from './styles';
+import JoinGroupOverlay from '../../../components/JoinGroupOverlay';
+import AddTitleOverlay from '../../../components/AddTitleOverlay';
+import * as S from '../../../components/themes/booksAndGroupsWrapper';
 
 function AllGroups({ groups, handleJoinClick }) {
     return (
@@ -13,9 +13,9 @@ function AllGroups({ groups, handleJoinClick }) {
                         <S.OverlayTop>
                             <AddTitleOverlay title={group.title} />
                         </S.OverlayTop>
-                        <S.OverlayEnter onClick={() => handleJoinClick(group)}>
+                        <S.OverlayBottom onClick={() => handleJoinClick(group)}>
                             <JoinGroupOverlay />
-                        </S.OverlayEnter>
+                        </S.OverlayBottom>
                     </S.ImgBox>
                 )}
             </S.ImgWrapper>

@@ -49,7 +49,13 @@ function Books() {
     }
 
     if (allBooks === null)
-        return (<div>Carregando...</div>)
+        return (
+            <Container>
+                <NavBar />
+                <Header header='Grupos' />
+                <div>carregando...</div>
+            </Container>
+        )
     else {
         return (
             <Container>

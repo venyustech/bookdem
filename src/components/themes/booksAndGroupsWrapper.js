@@ -15,6 +15,7 @@ const ImgBox = styled.div`
     padding:5px 5px;
     background-color: #ffffff;
     transition:transform 0.2s ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     :hover{
         cursor: pointer;
         transform:scale(1.1);
@@ -30,8 +31,11 @@ const ImgWrapper = styled.div`
 
     overflow: hidden;
     overflow-x: auto;
-    padding: 15px 15px ;
+    padding: 20px 25px ;
+    border-radius: 10px;
     background-color: var(--list-components);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     @media(max-width: 770px){
         width: 95%;
     }
@@ -58,7 +62,6 @@ const Img = styled.img`
     }
   
 `
-
 const OverlayTop = styled.div`
     position:absolute;
     display:flex;
@@ -76,7 +79,7 @@ const OverlayTop = styled.div`
     font-size: 15px;
     font-weight:bold ;
 `
-const OverlayEnter = styled.div`
+const OverlayBottom = styled.div`
     position:absolute;
     display:flex;
     justify-content:center;
@@ -87,8 +90,8 @@ const OverlayEnter = styled.div`
     transition:0.5s ease; 
     font-family:var( --font-family) ;
     padding: 10px 0; 
-    border-radius: 18px 18px 5px 5px ;
+    border-radius: 18px 18px 18px 18px ;
     opacity: 0;
     font-size: 15px;
 `
-export { Container, Img, ImgWrapper, ImgBox, OverlayTop, OverlayEnter }
+export { Container, Img, ImgWrapper, ImgBox, OverlayTop, OverlayBottom }

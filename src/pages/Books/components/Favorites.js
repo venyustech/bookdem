@@ -1,7 +1,7 @@
 import React from 'react';
-import RemoveFavorites from '../../../../components/RemoveFavorites';
+import RemoveFavorites from '../../../components/RemoveFavorites';
 
-import * as S from './styles';
+import * as S from '../../../components/themes/booksAndGroupsWrapper';
 
 function FavoritesList({ books, handleFavoritesClick }) {
     return (
@@ -10,9 +10,9 @@ function FavoritesList({ books, handleFavoritesClick }) {
                 {books.map((book, index) =>
                     <S.ImgBox key={index}>
                         <S.Img src={book.pictureUrl} alt="bookFavorite"  ></S.Img>
-                        <S.Overlay onClick={() => handleFavoritesClick(book)}>
+                        <S.OverlayBottom onClick={() => handleFavoritesClick(book)}>
                             <RemoveFavorites />
-                        </S.Overlay>
+                        </S.OverlayBottom>
                     </S.ImgBox>
 
                 )}

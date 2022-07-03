@@ -5,7 +5,7 @@ import UtilsProvider from "./context/Utils";
 import Books from "./pages/Books";
 import Groups from "./pages/Groups";
 import HomePage from "./pages/HomePage";
-import MyGroups from "./pages/MyGroups";
+import MyProfile from "./pages/MyProfile";
 import NewGroup from "./pages/NewGroup";
 import SignIn from "./pages/SignInPage";
 import SignUp from "./pages/SignUpPage";
@@ -23,14 +23,12 @@ export default function App() {
               <Route path="/sign-in" element={<SignIn />} />
               <Route path="/groups" element={<Groups />} />
               <Route path="/books" element={<Books />} />
-              <Route path="/myGroups" element={<MyGroups />} />
+              <Route path="/myProfile" element={<MyProfile />} />
               <Route path="/newGroup" element={<NewGroup />} />
-
             </Routes>
           </BrowserRouter>
         </AuthProvider>
       </UtilsProvider>
-
     </>
-  )
+  );
 }

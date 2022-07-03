@@ -17,7 +17,7 @@ import logo from "../../assets/logo.png";
 import styled from "styled-components";
 import HideOnScroll from "./components/HideOnScroll";
 import { useAuth } from "../../context/Auth";
-const pages = ["Meus Grupos", "Livros", "Grupos"];
+const pages = ["Meu Perfil", "Livros", "Grupos"];
 const settings = ["Logout"]; //"Profile", "Account", "Dashboard",
 
 const NavBar = () => {
@@ -48,8 +48,7 @@ const NavBar = () => {
     navigate("/sign-in");
   };
   function handlePage(page) {
-    console.log(page);
-    if (page === "Meus Grupos") navigate("/myGroups");
+    if (page === "Meu Perfil") navigate("/myProfile");
     if (page === "Livros") navigate("/books");
     if (page === "Grupos") navigate("/groups");
   }

@@ -17,14 +17,30 @@ import logo from "../../assets/logo.png";
 import styled from "styled-components";
 import HideOnScroll from "./components/HideOnScroll";
 import { useAuth } from "../../context/Auth";
+import { getUser } from "../../services/api";
 const pages = ["Meu Perfil", "Livros", "Grupos"];
 const settings = ["Logout"]; //"Profile", "Account", "Dashboard",
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { setToken } = useAuth();
+  const { token, setToken } = useAuth();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [user, setUser] = React.useState(null);
+
+  React.useEffect(() => {
+    if (!token) {
+      navigate("/sign-in");
+    }
+    const promise = getUser(token);
+    promise.then((response) => {
+      console.log(response.data.profileImg);
+      setUser(response.data);
+    });
+    promise.catch((error) => {
+      console.log(error.data.message);
+    });
+  }, [token, navigate]);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -38,6 +54,7 @@ const NavBar = () => {
   };
 
   const handleCloseUserMenu = () => {
+    console.log("oi");
     setAnchorElUser(null);
   };
 
@@ -62,7 +79,6 @@ const NavBar = () => {
       },
     },
   });
-
   return (
     <>
       <HideOnScroll>
@@ -171,10 +187,14 @@ const NavBar = () => {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="/static/images/avatar/2.jpg"
-                    />
+                    {user != null ? (
+                      <Avatar alt="Remy Sharp" src={user.profileImg} />
+                    ) : (
+                      <Avatar
+                        alt="Remy Sharp"
+                        src="/static/images/avatar/2.jpg"
+                      />
+                    )}
                   </IconButton>
                 </Tooltip>
                 <Menu

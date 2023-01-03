@@ -50,3 +50,5 @@ $ npm install
 ### Rodar na sua máquina:
 
 $ npm run start
+
+#### E aproveite :) 
